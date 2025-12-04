@@ -1,5 +1,7 @@
-from sqlalchemy import Column, Integer, String, DateTime, Boolean, Text, ForeignKey, Decimal, Enum
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, DateTime, Boolean, Text, ForeignKey, Enum
+from sqlalchemy.types import DECIMAL as DecimalType
+from decimal import Decimal
+from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 from datetime import datetime
@@ -63,7 +65,7 @@ class LedgerEntry(Base):
     description = Column(String, nullable=False)
     debit_account_id = Column(Integer, ForeignKey("accounts.id"), nullable=False)
     credit_account_id = Column(Integer, ForeignKey("accounts.id"), nullable=False)
-    amount = Column(Decimal(15, 2), nullable=False)
+    amount = Column(DecimalType(15, 2), nullable=False)
     reference = Column(String)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())

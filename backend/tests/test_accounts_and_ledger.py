@@ -6,8 +6,8 @@ from app.main import app
 from app.core.database import get_db, Base
 from app.models.models import User, Account, LedgerEntry
 
-# Test database
-SQLALCHEMY_DATABASE_URL = "sqlite:///./test.db"
+# Test database (in-memory)
+SQLALCHEMY_DATABASE_URL = "sqlite:///:memory:"
 engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
