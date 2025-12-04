@@ -16,22 +16,25 @@ A bookkeeping and accounting system for businesses, built with a React frontend 
 
 ```
 bbookkeeppeerr/
-├── packages/
-│   ├── backend/          # Python FastAPI backend
-│   │   ├── app/
-│   │   │   ├── api/      # API endpoints
-│   │   │   ├── core/     # Core functionality (database, security, config)
-│   │   │   ├── models/   # SQLAlchemy models
-│   │   │   └── schemas/  # Pydantic schemas
-│   │   └── pyproject.toml
-│   └── frontend/         # React TypeScript frontend
-│       ├── src/
-│       │   ├── components/
-│       │   ├── pages/
-│       │   ├── services/
-│       │   └── types/
-│       └── package.json
-└── package.json          # Root package.json for monorepo
+├── backend/              # Python FastAPI backend
+│   ├── app/
+│   │   ├── api/          # API endpoints
+│   │   ├── core/         # Core functionality (database, security, config)
+│   │   ├── models/       # SQLAlchemy models
+│   │   └── schemas/      # Pydantic schemas
+│   ├── tests/            # Backend tests
+│   ├── Dockerfile
+│   └── pyproject.toml
+├── frontend/             # React TypeScript frontend
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   └── types/
+│   ├── public/
+│   └── package.json
+├── package.json          # Root package.json for scripts
+└── README.md
 ```
 
 ## Setup
@@ -44,9 +47,9 @@ bbookkeeppeerr/
 
 ### Backend Setup
 
-1. Navigate to the backend directory:
+1. Navigate to backend directory:
    ```bash
-   cd packages/backend
+   cd backend
    ```
 
 2. Install dependencies with uv:
@@ -69,9 +72,9 @@ The API will be available at `http://localhost:8000`
 
 ### Frontend Setup
 
-1. Navigate to the frontend directory:
+1. Navigate to frontend directory:
    ```bash
-   cd packages/frontend
+   cd frontend
    ```
 
 2. Install dependencies:
