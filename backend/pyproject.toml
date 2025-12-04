@@ -16,6 +16,7 @@ dependencies = [
     "pydantic-settings>=2.1.0",
     "python-dotenv>=1.0.0",
 ]
+requires-python = ">=3.11"
 
 [project.optional-dependencies]
 test = [
@@ -23,7 +24,6 @@ test = [
     "pytest-asyncio>=0.21.0",
     "httpx>=0.24.0",
 ]
-requires-python = ">=3.11"
 
 [build-system]
 requires = ["hatchling"]
